@@ -55,7 +55,7 @@ TEnumAsByte<EEventRegistrationResult::Type> UEventManager::RegisterSingleEvent(c
 	}
 
 	TArray<FEventHandler> EventHandlerList;
-	ProduceHandlersFrom(Object, EventClass, EventHandlerList);
+	ProduceHandlersFrom(Object, EventClass, EventHandlerList, true);
 
 	if (EventHandlerList.Num() == 0)
 	{
@@ -150,7 +150,7 @@ bool UEventManager::CallEventSafely(FEventBase& EventToCall, class UScriptStruct
 	return true;
 }
 
-void UEventManager::ProduceHandlersFrom(class UObject* Object, class UScriptStruct* EventClass, TArray<FEventHandler>& Result)
+void UEventManager::ProduceHandlersFrom(class UObject* Object, class UScriptStruct* EventClass, TArray<FEventHandler>& Result, bool bExact)
 {
 	UFunction* Func = NULL;
 	UStructProperty* FirstParam = NULL;
@@ -163,7 +163,9 @@ void UEventManager::ProduceHandlersFrom(class UObject* Object, class UScriptStru
 			TFieldIterator<UProperty> ParamIt(Func);
 			FirstParam = Cast<UStructProperty>(*ParamIt);
 			/* 2nd criteria: First parameter must be a child of FEventBase. */
-			if (FirstParam != NULL && FirstParam->Struct->IsChildOf(EventClass))
+			if (FirstParam != NULL 
+				&& (bExact || FirstParam->Struct->IsChildOf(EventClass))
+				&& (!bExact || FirstParam->Struct == EventClass))
 			{
 				Result.Add(FEventHandler(Func, Object));
 			}

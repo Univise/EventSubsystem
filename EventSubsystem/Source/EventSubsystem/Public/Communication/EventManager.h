@@ -216,7 +216,7 @@ public: /* Calling */
 
 private: /* Functions */
 
-	void ProduceHandlersFrom(class UObject* Object, class UScriptStruct* EventClass, TArray<FEventHandler>& Result);
+	void ProduceHandlersFrom(class UObject* Object, class UScriptStruct* EventClass, TArray<FEventHandler>& Result, bool bExact = false);
 
 	/**
 	 * Adds the event handlers specified.
