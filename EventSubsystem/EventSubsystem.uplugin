@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "EventSubsystem",
+	"Description": "Framework for event handling.",
+	"Category": "Framework",
+	"CreatedBy": "Dominik Peacock",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "https://github.com/Univise/EventSubsystem/wiki",
+	"EnabledByDefault": true,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "EventSubsystem",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
