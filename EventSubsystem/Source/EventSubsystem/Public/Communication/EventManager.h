@@ -1,4 +1,4 @@
-// Intellectual property (2016) of Blake Univise a.k.a. Dominik Peacock. All Rights Reserved.
+/* Copyright (2017) Dominik Peacock. All Rights Reserved. */
 
 #pragma once
 
@@ -100,12 +100,13 @@ public:
 /**
  * Performs event handling and registration.
  *
+ * Compile this code with SUPPORT_MUTLI_THREADING set to 1 in BuildConfiguration.h to allow mutlithreading support (default is 0).
  * Registering / unregistering listeners blocks all events for the duration of modiyfing the listners mapping. There exists a more
  * efficient algorithm which will only blocks those events for which an object is registering, however, the trade-off between its
  * complexity and its efficientcy is very low assuming most objects register while the map is loaded.
  */
 UCLASS(BlueprintType)
-class EVENTSUBSYSTEM_API UEventManager : public UActorComponent
+class EVENTSUBSYSTEM_API UEventManager : public UObject
 {
 	GENERATED_BODY()
 public: /* Construction */

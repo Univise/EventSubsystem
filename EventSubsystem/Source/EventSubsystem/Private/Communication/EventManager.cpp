@@ -1,4 +1,4 @@
-// Intellectual property (2016) of Blake Univise a.k.a. Dominik Peacock. All Rights Reserved.
+/* Copyright (2017) Dominik Peacock. All Rights Reserved. */
 
 #include "EventSubsystemPrivatePCH.h"
 

@@ -2,6 +2,6 @@
 
 #include "EventSubsystem.h"
 
-#include "Engine.h"
+#include "EngineMinimal.h"
 
-#include "Communication/EventManager.h"
+#include "EventManager.h"

@@ -9,25 +9,26 @@ public class EventSubsystem : ModuleRules
 		
 		PublicIncludePaths.AddRange(
 			new string[] {
-				"EventSubsystem/Public"
-				// ... add public include paths required here ...
-			}
+				"EventSubsystem/Public",
+                "EventSubsystem/Public/Communication",
+                "EventSubsystem/Public/Events",
+                "EventSubsystem/Public/Events/Entity"
+            }
 			);
 				
 		
 		PrivateIncludePaths.AddRange(
 			new string[] {
 				"EventSubsystem/Private",
-				// ... add other private include paths required here ...
-			}
+                "EventSubsystem/Private/Communication",
+            }
 			);
 			
 		
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core",
-				// ... add other public dependencies that you statically link with here ...
+				"Core"
 			}
 			);
 			
@@ -36,18 +37,7 @@ public class EventSubsystem : ModuleRules
 			new string[]
 			{
 				"CoreUObject",
-				"Engine",
-				"Slate",
-				"SlateCore",
-				// ... add private dependencies that you statically link with here ...	
-			}
-			);
-		
-		
-		DynamicallyLoadedModuleNames.AddRange(
-			new string[]
-			{
-				// ... add any modules that your module loads dynamically here ...
+				"Engine"
 			}
 			);
 	}
